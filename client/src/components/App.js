@@ -1,24 +1,85 @@
-import React from 'react';
-import logo from '../logo.svg';
+import React, { useState } from 'react';
+
+import { makeStyles } from '@material-ui/core/styles';
+import { Paper, BottomNavigation, BottomNavigationAction, Fab, Card, CardContent} from '@material-ui/core';
+import { AttachMoney, Loop, Equalizer, Add } from '@material-ui/icons';
+
 import './App.css';
 
-function App() {
+let accounts = [
+  { name: 'Simple' },
+  { name: 'Savings Goal' },
+  { name: 'Emergency Fund' },
+  { name: 'Simple' },
+  { name: 'Savings Goal' },
+  { name: 'Emergency Fund' },
+  { name: 'Simple' },
+  { name: 'Savings Goal' },
+  { name: 'Emergency Fund' },
+]
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'inherit'
+  },
+  tabContainer: {
+    height: '100%'
+  },
+  fab: {
+    position: 'absolute',
+    margin: theme.spacing(2),
+    bottom: 0,
+    right: 0,
+  },
+  card: {
+    width: '90%',
+    margin: '1rem auto'
+  }
+}));
+
+const App = ({children}) => {
+  const classes = useStyles();
+  const [value, setValue] = useState(0);
+  console.log(accounts)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+     <Paper className={classes.root}>
+        <div className='title-bar'>
+
+        </div>
+        <div className='main'>
+          <div className='main-container' >
+            {accounts.map(account =>
+              <Card key={account.name} className={classes.card}>
+                <CardContent>
+                  {account.name}
+                </CardContent>
+              </Card>
+            )}
+          </div>
+          <Fab color="primary" aria-label="add" className={classes.fab}>
+            <Add />
+          </Fab>
+        </div>
+        <div className='navigation-bar'>
+          <BottomNavigation
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+            showLabels
+            className={classes.root}
+          >
+            <BottomNavigationAction icon={<AttachMoney />} />
+            <BottomNavigationAction icon={<Loop />} />
+            <BottomNavigationAction icon={<Equalizer />} />
+          </BottomNavigation>
+        </div>
+      </Paper>
     </div>
   );
 }

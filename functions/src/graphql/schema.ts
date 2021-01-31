@@ -1,4 +1,4 @@
-const { gql, makeExecutableSchema } = require('apollo-server')
+import { gql, makeExecutableSchema } from 'apollo-server'
 
 const rootSchema = gql`
   type Query {
@@ -12,7 +12,7 @@ const resolvers = {
   }
 }
 
-module.exports = makeExecutableSchema({
+export default makeExecutableSchema({
   typeDefs: [ rootSchema ],
   resolvers
 })

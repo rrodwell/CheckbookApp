@@ -16,7 +16,7 @@ const server = new ApolloServer({
     admin,
     functions
   }),
-  playground: true, 
+  playground: true,
   introspection: true
 })
 

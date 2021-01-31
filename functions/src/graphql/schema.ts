@@ -13,6 +13,6 @@ const resolvers = {
 }
 
 export default makeExecutableSchema({
-  typeDefs: [ rootSchema ],
+  typeDefs: [rootSchema],
   resolvers
 })

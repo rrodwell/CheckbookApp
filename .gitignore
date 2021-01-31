@@ -1,3 +1,17 @@
+# TypeScript
+**/*.js
+**/*.js.map
+**/*.d.ts
+
+# React
+/client/build
+
+# Firebase
+/functions/lib
+.firebase/
+database.rules.json
+.firebaserc
+
 # Logs
 logs
 *.log
@@ -5,17 +19,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 firebase-debug.log*
-
-# Firebase cache
-.firebase/
-database.rules.json
-
-# Firebase config
-
-# Uncomment this if you'd like others to create their own Firebase project.
-# For a team working on the same Firebase project(s), it is recommended to leave
-# it commented so all members can deploy to the same project(s) in .firebaserc.
-# .firebaserc
 
 # Runtime data
 pids
@@ -42,13 +45,14 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
+client/build/Release
 
 # Dependency directories
-node_modules/
+*/node_modules/
+*/.npm
 
-# Optional npm cache directory
-.npm
+# Misc
+.DS_Store
 
 # Optional eslint cache
 .eslintcache
@@ -63,5 +67,4 @@ node_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
-.firebaserc
+.env*

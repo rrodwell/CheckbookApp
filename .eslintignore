@@ -1,0 +1,10 @@
+# GENERAL
+*/node_modules/
+*/package.json
+*/package-lock.json
+
+# REACT
+
+
+# FUNCTIONS
+/functions/lib/

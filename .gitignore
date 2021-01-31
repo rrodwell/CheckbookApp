@@ -7,7 +7,7 @@
 /react/build
 
 # Firebase
-public/
+/hosting
 /functions/lib
 .firebase/
 database.rules.json

@@ -1,30 +1,37 @@
 import React, { useCallback } from 'react'
 import { usePlaidLink } from 'react-plaid-link'
+import Button from '@material-ui/core/Button'
 
 interface PlaidLinkOptions {
-  token: string;
-  onSuccess: Function;
-  onExit?: Function;
-  onLoad?: Function;
-  onEvent?: Function;
-  receivedRedirectUri?: string;
+  clientName: string
+  env: string
+  product: string[]
+  token: string
+  onSuccess: Function
+  onExit?: Function
+  onLoad?: Function
+  onEvent?: Function
+  receivedRedirectUri?: string
 }
 
 export default function Plaid() {
   const onSuccess = useCallback((token, metadata) => {
-    // send token to server
+    console.log({ token, metadata })
   }, [])
 
   const config: PlaidLinkOptions = {
-    token: '<GENERATED_LINK_TOKEN>',
+    clientName: 'Simple',
+    env: 'sandbox',
+    product: ['auth', 'transactions'],
+    token: 'link-sandbox-<TOKEN>',
     onSuccess
   }
 
-  const { open, ready, error } = usePlaidLink(config)
+  const { open, ready } = usePlaidLink(config)
 
   return (
-    <button onClick={() => open()} disabled={!ready}>
+    <Button variant='contained' color='primary' onClick={() => open()} disabled={!ready}>
       Connect a bank account
-    </button>
+    </Button>
   )
 }

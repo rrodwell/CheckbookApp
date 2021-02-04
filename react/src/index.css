@@ -5,14 +5,48 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
   height: 100vh;
+  padding: 0 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-flex {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+@media only screen and (max-width: 960px) {
+  #root {
+    width: 100vw;
+    padding: 0;
+  }
 }

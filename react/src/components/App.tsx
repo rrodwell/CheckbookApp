@@ -1,16 +1,17 @@
-import React, { ReactNode } from 'react'
-import { Plaid } from './common'
+import React from 'react'
+import { Paper } from '@material-ui/core'
+import NavProvider from '../context/navContext'
+import { AppBar, MainBody } from './layout'
 
 import './App.css'
 
-interface IProps {
-  children?: ReactNode
-}
-
-export default function App({ children }: IProps) {
+export default function App() {
   return (
-    <div className='app'>
-      <Plaid />
-    </div>
+    <Paper className='app full-flex'>
+      <NavProvider>
+        <AppBar />
+        <MainBody />
+      </NavProvider>
+    </Paper>
   )
 }

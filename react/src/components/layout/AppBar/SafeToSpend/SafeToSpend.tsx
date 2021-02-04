@@ -1,7 +1,7 @@
 import React from 'react'
 import { Paper, Grid } from '@material-ui/core'
 
-const amounts = ['available balance', 'in scheduled activites', 'in Expenses', 'in Goals']
+const amounts = ['available balance', 'in scheduled activities', 'in Expenses', 'in Goals']
 
 export default function SafeToSpend() {
   return (

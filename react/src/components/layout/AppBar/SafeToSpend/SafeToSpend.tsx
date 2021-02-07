@@ -61,7 +61,7 @@ export default function SafeToSpend() {
           {numeral(remaining).format()}
         </Typography>
         <Typography variant='h5' display='inline' color='textSecondary' style={{ padding: '0 0.5rem' }}>
-          Remaining
+          Daily Cash
         </Typography>
       </AccordionSummary>
       <AccordionDetails>

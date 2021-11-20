@@ -1,11 +1,12 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - name: Firebase Setup
-    init: cd functions && npm i 
-    command: echo 'start firebase'
-  
-  - name: Start App
-    init: cd react && npm i
+  - name: Start DB & App
+    init: |
+      cd functions
+      npm i 
+      cd ..
+      cd react
+      npm i
     command: npm run start:all
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/

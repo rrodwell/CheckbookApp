@@ -27,7 +27,7 @@ export default function Plaid() {
     onSuccess
   }
 
-  const { open, ready } = usePlaidLink(config)
+  const { open, ready } = usePlaidLink(config as any)
 
   return (
     <Button variant='contained' color='primary' onClick={() => open()} disabled={!ready}>
